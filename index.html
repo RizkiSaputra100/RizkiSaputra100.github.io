@@ -24,48 +24,48 @@
             text-align: left;
         }
         /* Membuat tampilan input number lebih menarik */
-input[type=number]::-webkit-inner-spin-button,
-input[type=number]::-webkit-outer-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
+	input[type=number]::-webkit-inner-spin-button,
+        input[type=number]::-webkit-outer-spin-button {
+          -webkit-appearance: none;
+          margin: 0;
+        }
 
-input[type=number] {
-  -moz-appearance:textfield;
-  appearance:textfield;
-  text-align: center;
-}
+        input[type=number] {
+          -moz-appearance:textfield;
+          appearance:textfield;
+          text-align: center;
+        }
 
-input[type=number]:focus {
-  outline: none;
-}
+        input[type=number]:focus {
+          outline: none;
+        }
 
-input[type=number]::-webkit-input-placeholder {
-   color: #aaa;
-   font-size: 14px;
-}
+        input[type=number]::-webkit-input-placeholder {
+           color: #aaa;
+           font-size: 14px;
+        }
 
-input[type=number]::-moz-placeholder { /* Firefox 19+ */
-   color: #aaa;
-   font-size: 14px;
-}
+        input[type=number]::-moz-placeholder { /* Firefox 19+ */
+           color: #aaa;
+           font-size: 14px;
+        }
 
-input[type=number]:-moz-placeholder {  /* Firefox 18- */
-   color: #aaa;
-   font-size: 14px;
-}
+        input[type=number]:-moz-placeholder {  /* Firefox 18- */
+           color: #aaa;
+           font-size: 14px;
+        }
 
-input[type=number]:-ms-input-placeholder {  
-   color: #aaa;
-   font-size: 14px;
-}
+        input[type=number]:-ms-input-placeholder {  
+           color: #aaa;
+           font-size: 14px;
+        }
 
-input[type=number] {
-  padding: 10px;
-  border: 2px solid #ccc;
-  border-radius: 4px;
-  font-size: 16px;
-}
+        input[type=number] {
+          padding: 10px;
+          border: 2px solid #ccc;
+          border-radius: 4px;
+          font-size: 16px;
+        }
 
 
         img {
@@ -129,11 +129,11 @@ input[type=number] {
             </div>
             <h6 data-aos="fade-up">sayang kasih nilai berapa?</h6>
             <div class="maaf">
-	<input type="number" id="nilai" min="0" max="99999999999">
-	<button onclick="postRating()">kasih nilai doang</button>
-            </div
+	<input type="number" id="nilai" min="0" max="99999999999"><br>
+	<button class="btn btn-success" data-aos="fade-up" data-aos-delay="1000"  onclick="postRating()">kasih nilai doang</button>
+            </div>
 
-            <p data-aos="fade-up">
+            <p data-aos="fade-up" >
                 Hari ini adalah hari yang spesial. Hari di mana kamu dilahirkan ke dunia ini dan membuat dunia menjadi tempat yang lebih indah. Aku sangat bersyukur karena kamu ada dalam hidupku. Semoga kamu selalu bahagia dan sehat selalu. Aku sayang kamu.
             </p>
 
@@ -164,7 +164,7 @@ input[type=number] {
     <script>
         function postRating() {
   // mendapatkan nilai input
-  var rating = parseInt(document.getElementById("rating-input").value);
+  var rating = parseInt(document.getElementById("nilai").value);
 
   // menampilkan popup jika nilai lebih besar dari 10
   if (rating <= 10) {
