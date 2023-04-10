@@ -23,6 +23,50 @@
         p {
             text-align: left;
         }
+        /* Membuat tampilan input number lebih menarik */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance:textfield;
+  appearance:textfield;
+  text-align: center;
+}
+
+input[type=number]:focus {
+  outline: none;
+}
+
+input[type=number]::-webkit-input-placeholder {
+   color: #aaa;
+   font-size: 14px;
+}
+
+input[type=number]::-moz-placeholder { /* Firefox 19+ */
+   color: #aaa;
+   font-size: 14px;
+}
+
+input[type=number]:-moz-placeholder {  /* Firefox 18- */
+   color: #aaa;
+   font-size: 14px;
+}
+
+input[type=number]:-ms-input-placeholder {  
+   color: #aaa;
+   font-size: 14px;
+}
+
+input[type=number] {
+  padding: 10px;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
 
         img {
             margin: 0 auto;
@@ -44,6 +88,13 @@
         .card {
             margin: 0 auto;
         }
+        .popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
     </style>
 
     <title>Happy Birthday sayang!</title>
@@ -76,6 +127,11 @@
                     engga.
                 </button>
             </div>
+            <p data-aos="fade-up">sayang kasih nilai berapa?</p>
+            <div class="maaf">
+	<input type="number" id="nilai" min="0" max="99999999999">
+	<button onclick="postRating()">kasih nilai doang</button>
+            </div
 
             <p data-aos="fade-up">
                 Hari ini adalah hari yang spesial. Hari di mana kamu dilahirkan ke dunia ini dan membuat dunia menjadi tempat yang lebih indah. Aku sangat bersyukur karena kamu ada dalam hidupku. Semoga kamu selalu bahagia dan sehat selalu. Aku sayang kamu.
@@ -106,6 +162,56 @@
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
     <script>
+        function postRating() {
+  // mendapatkan nilai input
+  var rating = parseInt(document.getElementById("rating-input").value);
+
+  // menampilkan popup jika nilai lebih besar dari 10
+  if (rating <= 10) {
+    var popup = document.createElement("div");
+    popup.className = "popup";
+    popup.innerHTML = "Masa sayang kasih nilai cuma"+ rating +"doang 😑";
+
+    document.body.appendChild(popup);
+  }
+             else if (rating <= 30) {
+    var popup = document.createElement("div");
+    popup.className = "popup";
+    popup.innerHTML = "beneran sayang kasih nilai "+ rating +" doang 😒";
+
+    document.body.appendChild(popup);
+  }
+                       else if (rating <= 70) {
+    var popup = document.createElement("div");
+    popup.className = "popup";
+    popup.innerHTML = "yakin sayang kasih nilai  "+ rating +" doang 😐";
+
+    document.body.appendChild(popup);
+  }
+                               else if (rating <= 100) {
+    var popup = document.createElement("div");
+    popup.className = "popup";
+    popup.innerHTML = "makasih sayang kasih nilai "+ rating +"☺";
+
+    document.body.appendChild(popup);
+  }
+                                          else if (rating <= 1000) {
+    var popup = document.createElement("div");
+    popup.className = "popup";
+    popup.innerHTML = "seneng banget aku sayang kasih nilai "+ rating +"😍";
+
+    document.body.appendChild(popup);
+  }
+                                                    else if (rating <= 99999999999) {
+    var popup = document.createElement("div");
+    popup.className = "popup";
+    popup.innerHTML = "ini baru sayang aku kasih milai "+ rating +"🥰💕";
+
+    document.body.appendChild(popup);
+  }
+}
+
+
         AOS.init();
 
         var typed = new Typed('#typed', {
